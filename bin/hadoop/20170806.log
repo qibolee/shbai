@@ -1,0 +1,109 @@
++ prefix_thang=hdfs://nmg01-taihang-hdfs.dmop.baidu.com:54310
++ prefix_khan=hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310
++ prefix_mulan=hdfs://nmg01-mulan-hdfs.dmop.baidu.com:54310
++ hadoop_khan=/home/work/shangbai/lib/hadoop-client-nmg/hadoop/bin/hadoop
++ local_dir=/home/work/shangbai/bin/hadoop
++ hadoop_prefix=hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310
++ hadoop_bin=/home/work/shangbai/lib/hadoop-client-nmg/hadoop/bin/hadoop
++ mapper_bin=/home/work/shangbai/bin/hadoop/mapper.py
++ reducer_bin=/home/work/shangbai/bin/hadoop/reducer.py
++ [[ 1 == 1 ]]
++ static_date=20170806
++ path_bad_dict=/home/work/shangbai/data/20170806/bad_dict
++ hadoop_output=hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/liqibo/NA/bad_dict_charge/20170806
++ path_local=/home/work/shangbai/data/20170806/bad_dict_charge
+++ list_input 20170806
+++ prefix_input=hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/NA/daily_shitu
+++ postfix_input='*/part-*'
+++ [[ 1 == 1 ]]
+++ echo '-input hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/NA/daily_shitu/20170806/*/part-*'
++ hadoop_input='-input hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/NA/daily_shitu/20170806/*/part-*'
++ main_task
++ run_hadoop
++ /home/work/shangbai/lib/hadoop-client-nmg/hadoop/bin/hadoop fs -rmr hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/liqibo/NA/bad_dict_charge/20170806
+rmr: hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/liqibo/NA/bad_dict_charge/20170806
++ /home/work/shangbai/lib/hadoop-client-nmg/hadoop/bin/hadoop streaming -input 'hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/NA/daily_shitu/20170806/*/part-*' -output hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/liqibo/NA/bad_dict_charge/20170806 -mapper 'python27/bin/python2.7 mapper.py' -reducer 'python27/bin/python2.7 reducer.py bad_dict' -file /home/work/shangbai/bin/hadoop/mapper.py -file /home/work/shangbai/bin/hadoop/reducer.py -file /home/work/shangbai/data/20170806/bad_dict -cacheArchive /share/python2.7.tar.gz#python27 -jobconf mapred.job.name=liqibo-static -jobconf mapred.job.priority=VERY_HIGH -jobconf mapred.job.queue.name=fcr-adu -jobconf stream.memory.limit=4096 -jobconf mapred.job.map.capacity=3000 -jobconf mapred.map.tasks=2000 -jobconf mapred.job.reduce.capacity=2000 -jobconf mapred.reduce.tasks=1000 -jobconf mapred.job.reduce.memory.mb=5120 -jobconf stream.num.map.output.key.fields=1
+17/08/08 16:18:20 WARN streaming.StreamJob: -cacheArchive option is deprecated, please use -archives instead.
+17/08/08 16:18:20 WARN streaming.StreamJob: -jobconf option is deprecated, please use -D instead.
+packageJobJar: [/home/work/shangbai/bin/hadoop/mapper.py, /home/work/shangbai/bin/hadoop/reducer.py, /home/work/shangbai/data/20170806/bad_dict] [/home/work/shangbai/lib/hadoop-client-nmg/hadoop/contrib/streaming/hadoop-2-streaming.jar] /tmp/streamjob6237134776817935016.jar tmpDir=null
+17/08/08 16:18:45 INFO mapred.JobClient: class org.apache.hadoop.security.UnixUserGroupInformation
+17/08/08 16:18:45 INFO mapred.JobClient: class org.apache.hadoop.security.UnixUserGroupInformation
+17/08/08 16:18:45 INFO hdfs.FMSClient: Write 24206855291795863 in pipeline 10.74.72.38:7001, 10.74.245.47:7001, 10.74.190.41:7001, 10.74.213.22:7001, 10.74.103.31:7001, 10.74.155.28:7001, 10.74.101.34:7001, 10.74.82.57:7001, 10.74.209.21:7001, 10.74.133.32:7001
+17/08/08 16:18:47 INFO hdfs.FMSClient: Write 24206855291795924 in pipeline 10.74.190.28:7001, 10.74.98.55:7001, 10.74.188.48:7001, 10.74.212.12:7001, 10.74.158.29:7001, 10.74.47.22:7001, 10.74.152.20:7001, 10.74.133.14:7001, 10.74.60.25:7001, 10.74.162.19:7001
+17/08/08 16:18:49 INFO hdfs.FMSClient: Write 24206855291795998 in pipeline 10.74.211.14:7001, 10.74.72.22:7001, 10.74.29.34:7001, 10.74.80.35:7001, 10.74.80.47:7001, 10.74.51.19:7001, 10.74.151.39:7001, 10.74.36.22:7001, 10.74.134.48:7001, 10.74.123.43:7001
+17/08/08 16:18:51 INFO hdfs.FMSClient: Write 24206855291796058 in pipeline 10.74.20.44:7001, 10.74.155.40:7001, 10.74.205.39:7001, 10.74.79.12:7001, 10.74.43.14:7001, 10.74.197.47:7001, 10.74.83.43:7001, 10.74.143.54:7001, 10.74.126.47:7001, 10.74.38.20:7001
+17/08/08 16:18:53 INFO hdfs.FMSClient: Write 24206855291796133 in pipeline 10.74.25.34:7001, 10.74.102.40:7001, 10.74.163.53:7001, 10.74.49.35:7001, 10.74.133.12:7001, 10.74.85.21:7001, 10.74.79.48:7001, 10.74.218.47:7001, 10.74.227.40:7001, 10.74.219.49:7001
+17/08/08 16:18:53 INFO util.NativeCodeLoader: Loaded the native-hadoop library
+17/08/08 16:18:53 INFO compress.LzoCodec: Successfully loaded & initialized native-lzo library
+17/08/08 16:18:53 INFO compress.LzmaCodec: Successfully loaded & initialized native-lzma library
+17/08/08 16:18:53 INFO compress.QuickLzCodec: Successfully loaded & initialized native-quicklz library
+17/08/08 16:18:53 INFO mapred.FileInputFormat: getInputPaths: dirs: hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/NA/daily_shitu/20170806/*/part-*
+17/08/08 16:18:54 INFO mapred.FileInputFormat: Total input paths to process : 1001
+17/08/08 16:18:54 WARN mapred.FileInputFormat: Split size is optimized by default, you can set 'abaci.split.optimize.enable=false' to skip it
+17/08/08 16:18:56 INFO hdfs.FMSClient: Write 13510806176562127 in pipeline 10.74.212.46:7001, 10.74.111.29:7001, 10.74.36.28:7001
+17/08/08 16:18:57 INFO mapred.JobClient: splits size : 2020
+17/08/08 16:18:57 INFO hdfs.FMSClient: Write 27584555013298725 in pipeline 10.74.16.34:7001, 10.74.205.26:7001, 10.74.115.47:7001
+17/08/08 16:18:57 INFO split.SplitUtils: create hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/dc/deva/system/mapred/job_20170705161142_1653974/split.done
+17/08/08 16:18:57 INFO hdfs.FMSClient: Write 28147504966720050 in pipeline 10.74.215.38:7001, 10.74.195.12:7001, 10.74.36.41:7001
+17/08/08 16:18:57 INFO mapred.JobClient: Running job: job_20170705161142_1653974
+17/08/08 16:18:57 INFO mapred.JobClient: To kill this job, run:
+17/08/08 16:18:57 INFO mapred.JobClient: /home/work/shangbai/lib/hadoop-client-nmg/hadoop/bin/../bin/hadoop job -Dmapred.job.tracker=nmg01-khan-abaci.dmop.baidu.com:54311 -kill job_20170705161142_1653974
+17/08/08 16:18:57 INFO mapred.JobClient: Tracking URL: http://nmg01-khan-mapred01.nmg01.baidu.com:8030/jobproxy.jsp?jobid=job_20170705161142_1653974
+17/08/08 16:19:16 INFO mapred.JobClient: Total split num: 2020
+17/08/08 16:19:16 INFO mapred.JobClient: Total split size: 539871 (bytes)
+17/08/08 16:19:16 INFO mapred.JobClient: Total split time: 3551 (ms)
+17/08/08 16:19:17 INFO mapred.JobClient:  map 0% reduce 0%
+17/08/08 16:44:07 INFO mapred.JobClient:  map 1% reduce 0%
+17/08/08 16:44:17 INFO mapred.JobClient:  map 3% reduce 0%
+17/08/08 16:44:27 INFO mapred.JobClient:  map 5% reduce 0%
+17/08/08 16:44:37 INFO mapred.JobClient:  map 8% reduce 0%
+17/08/08 16:44:47 INFO mapred.JobClient:  map 12% reduce 0%
+17/08/08 16:44:57 INFO mapred.JobClient:  map 17% reduce 0%
+17/08/08 16:45:07 INFO mapred.JobClient:  map 22% reduce 0%
+17/08/08 16:45:17 INFO mapred.JobClient:  map 28% reduce 0%
+17/08/08 16:45:27 INFO mapred.JobClient:  map 33% reduce 0%
+17/08/08 16:45:37 INFO mapred.JobClient:  map 39% reduce 0%
+17/08/08 16:45:47 INFO mapred.JobClient:  map 45% reduce 0%
+17/08/08 16:45:56 INFO mapred.JobClient:  map 56% reduce 0%
+17/08/08 16:46:07 INFO mapred.JobClient:  map 70% reduce 0%
+17/08/08 16:46:17 INFO mapred.JobClient:  map 73% reduce 0%
+17/08/08 16:46:27 INFO mapred.JobClient:  map 74% reduce 0%
+17/08/08 16:48:37 INFO mapred.JobClient:  map 75% reduce 0%
+17/08/08 16:49:07 INFO mapred.JobClient:  map 78% reduce 0%
+17/08/08 16:49:27 INFO mapred.JobClient:  map 79% reduce 0%
+17/08/08 16:49:46 INFO mapred.JobClient:  map 85% reduce 0%
+17/08/08 16:49:57 INFO mapred.JobClient:  map 87% reduce 0%
+17/08/08 16:50:27 INFO mapred.JobClient:  map 88% reduce 0%
+17/08/08 16:50:57 INFO mapred.JobClient:  map 89% reduce 0%
+17/08/08 16:52:17 INFO mapred.JobClient:  map 90% reduce 0%
+17/08/08 16:52:37 INFO mapred.JobClient:  map 91% reduce 0%
+17/08/08 16:53:47 INFO mapred.JobClient:  map 94% reduce 0%
+17/08/08 16:53:57 INFO mapred.JobClient:  map 95% reduce 0%
+17/08/08 16:55:07 INFO mapred.JobClient:  map 99% reduce 0%
+17/08/08 16:55:57 INFO mapred.JobClient:  map 100% reduce 0%
+17/08/08 16:56:57 INFO mapred.JobClient:  map 100% reduce 1%
+17/08/08 16:57:27 INFO mapred.JobClient:  map 100% reduce 3%
+17/08/08 16:57:38 INFO mapred.JobClient:  map 100% reduce 4%
+17/08/08 16:57:47 INFO mapred.JobClient:  map 100% reduce 6%
+17/08/08 16:57:57 INFO mapred.JobClient:  map 100% reduce 7%
+17/08/08 16:58:07 INFO mapred.JobClient:  map 100% reduce 9%
+17/08/08 16:58:18 INFO mapred.JobClient:  map 100% reduce 13%
+17/08/08 16:58:27 INFO mapred.JobClient:  map 100% reduce 16%
+17/08/08 16:58:37 INFO mapred.JobClient:  map 100% reduce 20%
+17/08/08 16:58:47 INFO mapred.JobClient:  map 100% reduce 29%
+17/08/08 16:58:58 INFO mapred.JobClient:  map 100% reduce 46%
+17/08/08 16:59:07 INFO mapred.JobClient:  map 100% reduce 62%
+17/08/08 16:59:18 INFO mapred.JobClient:  map 100% reduce 74%
+17/08/08 16:59:28 INFO mapred.JobClient:  map 100% reduce 88%
+17/08/08 16:59:37 INFO mapred.JobClient:  map 100% reduce 92%
+17/08/08 16:59:47 INFO mapred.JobClient:  map 100% reduce 94%
+17/08/08 16:59:58 INFO mapred.JobClient:  map 100% reduce 96%
+17/08/08 17:00:07 INFO mapred.JobClient:  map 100% reduce 97%
+17/08/08 17:00:28 INFO mapred.JobClient:  map 100% reduce 98%
+17/08/08 17:00:47 INFO mapred.JobClient:  map 100% reduce 99%
+17/08/08 17:03:08 INFO mapred.JobClient: Updating completed job! Ignoring ...
+17/08/08 17:03:08 INFO mapred.JobClient: Updating completed job! Ignoring ...
+17/08/08 17:03:08 INFO mapred.JobClient: Job complete: job_20170705161142_1653974
+17/08/08 17:03:08 INFO streaming.StreamJob: Output: hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/liqibo/NA/bad_dict_charge/20170806
++ [[ -f /home/work/shangbai/data/20170806/bad_dict_charge ]]
++ /home/work/shangbai/lib/hadoop-client-nmg/hadoop/bin/hadoop fs -getmerge hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/liqibo/NA/bad_dict_charge/20170806 /home/work/shangbai/data/20170806/bad_dict_charge

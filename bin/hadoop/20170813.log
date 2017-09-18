@@ -1,0 +1,45 @@
++ prefix_thang=hdfs://nmg01-taihang-hdfs.dmop.baidu.com:54310
++ prefix_khan=hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310
++ prefix_mulan=hdfs://nmg01-mulan-hdfs.dmop.baidu.com:54310
++ hadoop_khan=/home/work/shangbai/lib/hadoop-client-nmg/hadoop/bin/hadoop
++ local_dir=/home/work/shangbai/bin/hadoop
++ hadoop_prefix=hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310
++ hadoop_bin=/home/work/shangbai/lib/hadoop-client-nmg/hadoop/bin/hadoop
++ mapper_bin=/home/work/shangbai/bin/hadoop/mapper.py
++ reducer_bin=/home/work/shangbai/bin/hadoop/reducer.py
++ [[ 1 == 1 ]]
++ static_date=20170813
++ path_bad_dict=/home/work/shangbai/data/20170813/bad_dict
++ hadoop_output=hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/liqibo/NA/bad_dict_charge/20170813
++ path_local=/home/work/shangbai/data/20170813/bad_dict_charge
+++ list_input 20170813
+++ prefix_input=hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/NA/daily_shitu
+++ postfix_input='*/part-*'
+++ [[ 1 == 1 ]]
+++ echo '-input hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/NA/daily_shitu/20170813/*/part-*'
++ hadoop_input='-input hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/NA/daily_shitu/20170813/*/part-*'
++ main_task
++ run_hadoop
++ /home/work/shangbai/lib/hadoop-client-nmg/hadoop/bin/hadoop fs -rmr hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/liqibo/NA/bad_dict_charge/20170813
+rmr: hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/liqibo/NA/bad_dict_charge/20170813
++ /home/work/shangbai/lib/hadoop-client-nmg/hadoop/bin/hadoop streaming -input 'hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/NA/daily_shitu/20170813/*/part-*' -output hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/liqibo/NA/bad_dict_charge/20170813 -mapper 'python27/bin/python2.7 mapper.py' -reducer 'python27/bin/python2.7 reducer.py bad_dict' -file /home/work/shangbai/bin/hadoop/mapper.py -file /home/work/shangbai/bin/hadoop/reducer.py -file /home/work/shangbai/data/20170813/bad_dict -cacheArchive /share/python2.7.tar.gz#python27 -jobconf mapred.job.name=liqibo-static -jobconf mapred.job.priority=VERY_HIGH -jobconf mapred.job.queue.name=fcr-adu -jobconf stream.memory.limit=4096 -jobconf mapred.job.map.capacity=3000 -jobconf mapred.map.tasks=2000 -jobconf mapred.job.reduce.capacity=2000 -jobconf mapred.reduce.tasks=1000 -jobconf mapred.job.reduce.memory.mb=5120 -jobconf stream.num.map.output.key.fields=1
+17/08/14 13:57:20 WARN streaming.StreamJob: -cacheArchive option is deprecated, please use -archives instead.
+17/08/14 13:57:20 WARN streaming.StreamJob: -jobconf option is deprecated, please use -D instead.
+packageJobJar: [/home/work/shangbai/bin/hadoop/mapper.py, /home/work/shangbai/bin/hadoop/reducer.py, /home/work/shangbai/data/20170813/bad_dict] [/home/work/shangbai/lib/hadoop-client-nmg/hadoop/contrib/streaming/hadoop-2-streaming.jar] /tmp/streamjob1311487150206474206.jar tmpDir=null
+17/08/14 13:57:21 INFO mapred.JobClient: class org.apache.hadoop.security.UnixUserGroupInformation
+17/08/14 13:57:21 INFO mapred.JobClient: class org.apache.hadoop.security.UnixUserGroupInformation
+17/08/14 13:57:22 INFO hdfs.FMSClient: Write 10414581459789657 in pipeline 10.74.140.23:7001, 10.74.184.19:7001, 10.74.102.25:7001, 10.74.24.17:7001, 10.74.130.54:7001, 10.74.245.47:7001, 10.74.205.27:7001, 10.74.119.39:7001, 10.74.72.16:7001, 10.74.204.49:7001
+17/08/14 13:57:22 INFO hdfs.FMSClient: Exception in createBlockOutputStream on object /37-27882678543 file /app/dc/deva/system/mapred/job_20170705161142_1962910/job.jar:java.io.IOException: Bad connect ack with firstBadLink 10.74.130.54:7001
+17/08/14 13:57:22 INFO hdfs.FMSClient: Excluding node: 10.74.130.54:7001
+17/08/14 13:57:22 INFO hdfs.FMSClient: Abandoning block blk_10414581459789657_6587300453
+17/08/14 13:57:28 INFO hdfs.FMSClient: Write 10414581459789836 in pipeline 10.74.209.15:7001, 10.74.108.22:7001, 10.74.136.38:7001, 10.74.198.22:7001, 10.74.135.52:7001, 10.74.91.14:7001, 10.74.23.22:7001, 10.74.67.52:7001, 10.74.41.42:7001, 10.74.156.32:7001
+17/08/14 13:57:30 INFO util.NativeCodeLoader: Loaded the native-hadoop library
+17/08/14 13:57:30 INFO compress.LzoCodec: Successfully loaded & initialized native-lzo library
+17/08/14 13:57:30 INFO compress.LzmaCodec: Successfully loaded & initialized native-lzma library
+17/08/14 13:57:30 INFO compress.QuickLzCodec: Successfully loaded & initialized native-quicklz library
+17/08/14 13:57:30 INFO mapred.FileInputFormat: getInputPaths: dirs: hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/NA/daily_shitu/20170813/*/part-*
+17/08/14 13:57:30 ERROR mapred.JobClient: Error Launching job : Input Pattern hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/NA/daily_shitu/20170813/*/part-* matches 0 files
+Streaming Job Failed!
++ [[ -f /home/work/shangbai/data/20170813/bad_dict_charge ]]
++ /home/work/shangbai/lib/hadoop-client-nmg/hadoop/bin/hadoop fs -getmerge hdfs://nmg01-khan-hdfs.dmop.baidu.com:54310/app/ecom/fcr/liqibo/NA/bad_dict_charge/20170813 /home/work/shangbai/data/20170813/bad_dict_charge
+getmerge: File does not exist: /app/ecom/fcr/liqibo/NA/bad_dict_charge/20170813

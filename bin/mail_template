@@ -1,0 +1,164 @@
+Subject: NA化检测结果统计报告--static_date
+From: liqibo@baidu.com
+To: liqibo@baidu.com, shixuyong@baidu.com, luhuasheng@baidu.com, liudeng03@baidu.com, hedengwu@baidu.com, zhoushufeng@baidu.com, wangxiufei@baidu.com, chenzhiyang@baidu.com, zhuxin05@baidu.com
+Cc: liqibo@baidu.com
+Mime-Version: 1.0
+Content-type: multipart/mixed; boundary="FILEBOUNDARY"
+
+--FILEBOUNDARY
+Content-Type: multipart/alternative; boundary="MSGBOUNDARY"
+
+--MSGBOUNDARY
+Content-Type: text/html; charset=gbk
+Content-Disposition: inline
+
+<html>
+<head>
+	<style>
+		table{border:"1";cellspacing:"0";cellpadding="0";font-family:黑体;}
+		table td{border:1px solid #000}
+		td{width:200px;border-width:0px 1px 1px 0px;}
+		._0{background:#7A67EE;}
+		._1{background:#FFFF00;}
+		._2{background:#DEB887;}
+		._3{background:#FFFFFF;}
+	</style>
+</head>
+<body>
+	<h3>NA化检测相关数据指标(static_date)</h3>
+	<p/>
+	<p/>
+	<table>
+		<thead align=center>
+			<tr><td colspan=5 class='_0'>NA产出数据相关指标</td></tr>
+		</thead>
+		<tbody>
+			<tr class='_1'><td>指标</td><td>数据量</td><td>占比</td><td>消费:元</td><td>占比</td></tr>
+			<tr><td class='_2'>总数据量</td><td class='_3'>na_valid_num</td><td class='_3'>100%</td><td class='_3'>na_total_chrg</td><td class='_3'>100%</td></tr>
+			<tr><td class='_2'>pc url</td><td class='_3'>na_pcurl_num</td><td class='_3'>na_pcurl_ratio</td><td class='_3'>na_pc_chrg</td><td class='_3'>na_pc_chg_ratio</td></tr>
+			<tr><td class='_2'>死链url</td><td class='_3'>na_deadurl_num</td><td class='_3'>na_deadurl_ratio</td><td class='_3'>na_dead_chrg</td><td class='_3'>na_dead_chg_ratio</td></tr>
+			<tr><td class='_2'>弹窗url</td><td class='_3'>na_alert_num</td><td class='_3'>na_alert_ratio</td><td class='_3'>na_alert_chrg</td><td class='_3'>na_alert_chg_ratio</td></tr>
+			<tr><td class='_2'>浮层url</td><td class='_3'>na_layer_num</td><td class='_3'>na_layer_ratio</td><td class='_3'>na_layer_chrg</td><td class='_3'>na_layer_chg_ratio</td></tr>
+			<tr><td class='_2'>apk url</td><td class='_3'>na_apk_num</td><td class='_3'>na_apk_ratio</td><td class='_3'>na_apk_chrg</td><td class='_3'>na_apk_chg_ratio</td></tr>
+		</tbody>
+	</table>
+	<p/>
+	<!-- 15号到20号均为虚拟数据<br/> -->
+	<!-- 22号到26号均为虚拟数据<br/> -->
+	<!-- 28号到29号均为虚拟数据<br/> -->
+	<!-- 31号为虚拟数据<br/> -->
+	<!-- 3号为虚拟数据<br/> -->
+	5号为虚拟数据<br/>
+	7号为虚拟数据<br/>
+	9号为虚拟数据<br/>
+	<img src="cid:C6FE3B2C750569F49CAD7F8C519AB688" modifysize="100%" style="width: 700px;">
+	<p/>
+	<img src="cid:C6FE3B2C750569F49CAD7F8C519AB689" modifysize="100%" style="width: 700px;">
+	<p/>
+	<table>
+		<thead align=center>
+			<tr><td colspan=3 class='_0'>商百最终产出数据相关指标</td></tr>
+		</thead>
+		<tbody>
+			<tr class='_1'><td>指标</td><td>数据量</td><td>占比</td></tr>
+			<tr><td class='_2'>总数据量</td><td class='_3'>result_total_num</td><td class='_3'>100%</td></tr>
+			<tr><td class='_2'>未检测数据</td><td class='_3'>result_type0_num</td><td class='_3'>result_type0_ratio</td></tr>
+			<tr><td class='_2'>已检测数据</td><td class='_3'>result_checked_num</td><td class='_3'>result_checked_ratio</td></tr>
+			<tr><td class='_2'>已检测中的不合格数据</td><td class='_3'>result_type1_num</td><td class='_3'>result_type1_ratio</td></tr>
+			<tr><td class='_2'>已检测中的合格数据</td><td class='_3'>result_type2_num</td><td class='_3'>result_type2_ratio</td></tr>
+			<tr><td class='_2'>已检测中的死链数据</td><td class='_3'>result_deadurl_num</td><td class='_3'>result_deadurl_ratio</td></tr>
+			<tr><td class='_2'>已检测中的pc数据</td><td class='_3'>result_pcurl_num</td><td class='_3'>result_pcurl_ratio</td></tr>
+			<tr><td class='_2'>已检测中的浮层数据</td><td class='_3'>result_layer_num</td><td class='_3'>result_layer_ratio</td></tr>
+			<tr><td class='_2'>已检测中的弹窗数据</td><td class='_3'>result_alert_num</td><td class='_3'>result_alert_ratio</td></tr>
+			<tr><td class='_2'>已检测中的apk数据</td><td class='_3'>result_apk_num</td><td class='_3'>result_apk_ratio</td></tr>
+		</tbody>
+	</table>
+	<p/>
+	<table>
+		<thead align=center>
+			<tr><td colspan=2 class='_0'>static_date pc/死链、弹窗浮层增量指标(相对于前一天数据)</td></tr>
+		</thead>
+		<tbody>
+			<tr class='_1'><td>指标</td><td>数据量</td></tr>
+			<tr><td class='_2'>PC/死链总数据</td><td class='_3'>pc_dead_total_num</td></tr>
+			<tr><td class='_2'>PC/死链新增数据</td><td class='_3'>pc_dead_total_added_num</td></tr>
+			<tr><td class='_2'>PC/死链已整改数据</td><td class='_3'>pc_dead_total_reduced_num</td></tr>
+			<tr><td class='_2'>PC/死链user总量</td><td class='_3'>pc_dead_user_num</td></tr>
+			<tr><td class='_2'>PC/死链user新增数据</td><td class='_3'>pc_dead_user_added_num</td></tr>
+			<tr><td class='_2'>PC/死链user已整改数据</td><td class='_3'>pc_dead_user_reduced_num</td></tr>
+			<tr><td class='_2'>弹窗浮层总数据</td><td class='_3'>alert_layer_total_num</td></tr>
+			<tr><td class='_2'>弹窗浮层新增数据</td><td class='_3'>alert_layer_total_added_num</td></tr>
+			<tr><td class='_2'>弹窗浮层已整改数据</td><td class='_3'>alert_layer_total_reduced_num</td></tr>
+			<tr><td class='_2'>弹窗浮层user总量</td><td class='_3'>alert_layer_user_num</td></tr>
+			<tr><td class='_2'>弹窗浮层user新增数据</td><td class='_3'>alert_layer_user_added_num</td></tr>
+			<tr><td class='_2'>弹窗浮层user已整改数据</td><td class='_3'>alert_layer_user_reduced_num</td></tr>
+		</tbody>
+	</table>
+	<p/>
+	<table>
+		<thead align=center>
+			<tr><td colspan=2 class='_0'>在线词表数据相关指标</td></tr>
+		</thead>
+		<tbody>
+			<tr class='_1'><td>指标</td><td>数据量</td></tr>
+			<tr><td class='_2'>pc/死链词表</td><td class='_3'>global_pc_dead_num</td></tr>
+			<tr><td class='_2'>mixer屏蔽词表</td><td class='_3'>global_mixer_total_num</td></tr>
+			<tr><td class='_2'>feed屏蔽词表</td><td class='_3'>global_feed_total_num</td></tr>
+			<tr><td class='_2'>badcase替换词表</td><td class='_3'>global_badcase_total_num</td></tr>
+			<tr><td class='_2'>slp_uid词表</td><td class='_3'>global_slp_uid_total_num</td></tr>
+		</tbody>
+	</table>
+	<p/>
+	<table>
+		<thead align=center>
+			<tr><td colspan=2 class='_0'>商百原始数据相关指标</td></tr>
+		</thead>
+		<tbody>
+			<tr class='_1'><td>指标</td><td>数据量</td></tr>
+			<tr><td class='_2'>原始数据</td><td class='_3'>shangbai_ori_total_num</td></tr>
+			<tr><td class='_2'>预处理后数据</td><td class='_3'>shangbai_total_num</td></tr>
+		</tbody>
+	</table>
+	<p/>
+	<hr>
+	<p/>
+	<table>
+		<thead align=center>
+			<tr><td colspan=1 class='_0'>随机抽取的100条PC url</td></tr>
+		</thead>
+		<tbody>
+			pc_sample
+		</tbody>
+	</table>
+	<p/>
+	<table>
+		<thead align=center>
+			<tr><td colspan=1 class='_0'>随机抽取的100条死链url</td></tr>
+		</thead>
+		<tbody>
+			dead_sample
+		</tbody>
+	</table>
+</body>
+</html>
+
+--MSGBOUNDARY--
+
+--FILEBOUNDARY
+Content-Type: application/octet-stream; name="static_trend1.png"
+Content-Disposition: inline; filename="static_trend2.png"
+Content-ID: <C6FE3B2C750569F49CAD7F8C519AB688>
+Content-Transfer-Encoding: base64
+
+base64_trend_picture1
+
+--FILEBOUNDARY
+Content-Type: application/octet-stream; name="static_trend2.png"
+Content-Disposition: inline; filename="static_trend2.png"
+Content-ID: <C6FE3B2C750569F49CAD7F8C519AB689>
+Content-Transfer-Encoding: base64
+
+base64_trend_picture2
+
+--FILEBOUNDARY--
+

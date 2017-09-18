@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+date=$1
+if [ -n $date ]; then
+	date=`date -d "1 day ago" +"%Y%m%d"`
+fi
+
+sh /home/work/shangbai/bin/run.sh ${date} >/home/work/shangbai/log/day_${date}.log 2>&1 
+
